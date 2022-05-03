@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Main Screen</title>
+    
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <index id="sidepanel">
+
+    </index>
+    <div id="header">
+        <div id="title"> Hello </div>
+    </div>
+    <nav>
+        <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+        </ol>
+    </nav>
+    
+
+        <div id="jsondiv">
+            <script>
+                var request = new XMLHttpRequest();
+                request.open("GET", "info.json", false);
+                request.send(null)
+                var obj = JSON.parse(request.responseText);
+
+                let txt = "";
+
+                obj.employees.forEach(element => {
+                    txt += element.firstName + " " + element.lastName + "<br>";
+                });
+
+                document.getElementById("jsondiv").innerHTML = txt;
+            </script>
+        </div>
+
+
+    <footer id="footer">
+        <p>Created by Colton Daigneault</p>
+    </footer>
+</body>
+</html>
