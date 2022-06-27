@@ -5,6 +5,7 @@
     <title>Main Screen</title>
     
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script> src="my.js"</script>
     <link href="styles.css" rel="stylesheet">
 </head>
 
@@ -12,9 +13,33 @@
     <index id="sidepanel">
 
     </index>
+   
     <div id="header">
-        <div id="title"> Hello </div>
+        <div id="bar">
+            <div id="companyname">
+                Company Name
+            </div>
+            <ul class="nav">
+                <il><a href="#home">Home</a></il>
+                <il><a href="#about">About Us</a></il>
+                <il><a href="#clients">Our Clients</a></il>
+                <il><a href="#contact">Contact Us</a></il>
+            </ul>
+        </div>
     </div>
+
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+          <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
+          <!-- Float links to the right. Hide them on small screens -->
+          <div class="w3-right w3-hide-small">
+            <a href="#projects" class="w3-bar-item w3-button">Projects</a>
+            <a href="#about" class="w3-bar-item w3-button">About</a>
+            <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+          </div>
+        </div>
+      </div>
+    
     <nav>
         <ol>
             <li><a href="/">Home</a></li>
@@ -39,10 +64,32 @@
                 document.getElementById("jsondiv").innerHTML = txt;
             </script>
         </div>
+    
+    <div class="spacer">
+    </div>
 
+    <div id="p2">
+        <p id="test">Hello World</p>
+        <script>
+            const msvr = document.getElementById('p2');
+
+            function random(number) {
+            return Math.floor(Math.random() * (number+1));
+            }
+
+            document.getElementById('test').addEventListener('mouseover', (e) => {
+                e.stopPropagation();
+            });
+
+            msvr.addEventListener('mouseover', (e) => {
+                const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+                e.target.style.backgroundColor = rndCol;
+            });
+        </script>
+    </dic>
 
     <footer id="footer">
-        <p>Created by Colton Daigneault</p>
+        Made by Colton Daigneault
     </footer>
 </body>
 </html>
